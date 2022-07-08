@@ -45,6 +45,7 @@ class DelContactDialog(QDialog):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     from database import ClientDatabase
+
     database = ClientDatabase('test1')
     window = DelContactDialog(database)
     # при подключении контакты удаляются, а затем добавляются с сервера
