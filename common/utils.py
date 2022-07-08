@@ -5,6 +5,7 @@ sys.path.append('../')
 from common.variables import *
 from common.decos import log
 
+
 @log
 def get_message(client):
     '''

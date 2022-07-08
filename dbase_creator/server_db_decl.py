@@ -117,7 +117,7 @@ class ServerDB:
             self.ActiveUsers.ip,
             self.ActiveUsers.port,
             self.ActiveUsers.time_conn
-            ).join(self.AllUsers)
+        ).join(self.AllUsers)
         # Возвращаем список тюплов
         return query.all()
 

@@ -240,10 +240,10 @@ class ClientMainWindow(QMainWindow):
                 print('NO')
                 # Раз нет, спрашиваем хотим ли добавить юзера в контакты.
                 if self.messages.question(self, 'Новое сообщение',
-                              f'Получено новое сообщение от {sender}.\n '
-                              f'Данного пользователя нет в вашем контакт-листе.\n'
-                              f' Добавить в контакты и открыть чат с ним?',
-                              QMessageBox.Yes, QMessageBox.No) == QMessageBox.Yes:
+                                          f'Получено новое сообщение от {sender}.\n '
+                                          f'Данного пользователя нет в вашем контакт-листе.\n'
+                                          f' Добавить в контакты и открыть чат с ним?',
+                                          QMessageBox.Yes, QMessageBox.No) == QMessageBox.Yes:
                     self.add_contact(sender)
                     self.current_chat = sender
                     self.set_active_user()
@@ -263,8 +263,10 @@ class ClientMainWindow(QMainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     from database import ClientDatabase
+
     database = ClientDatabase('test1')
     from transport import ClientTransport
+
     transport = ClientTransport(7777, '127.0.0.1', database, 'test1')
     window = ClientMainWindow(database, transport)
     sys.exit(app.exec_())
